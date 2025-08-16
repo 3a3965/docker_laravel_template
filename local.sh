@@ -1,19 +1,19 @@
 #!/bin/bash
 
 function _up() {
-  docker-compose --env-file ./src/.env up -d
+  docker-compose --env-file ./.env up -d
 }
 
 function _stop() {
-  docker-compose --env-file ./src/.env stop
+  docker-compose --env-file ./.env stop
 }
 
 function _rebuild() {
-  docker-compose --env-file ./src/.env up -d --build --force-recreate --remove-orphans
+  docker-compose --env-file ./.env up -d --build --force-recreate --remove-orphans
 }
 
 function _ssh() {
-  docker-compose --env-file ./src/.env exec app bash
+  docker-compose --env-file ./.env exec app bash
 }
 
 case $1 in
